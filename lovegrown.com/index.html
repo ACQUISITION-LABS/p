@@ -61,6 +61,11 @@ body.locked{overflow:hidden}
 .arch li{counter-increment:a;position:relative;padding-left:30px;font-size:14px;line-height:1.5;color:var(--ink)}
 .arch li:before{content:counter(a);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--p);color:var(--tp);font-size:11px;font-weight:700;line-height:21px;text-align:center}
 .arch li b{display:block}
+.arch-t{margin:18px 0 0;padding:16px 0 0;border-top:1px solid #e3e3e0}
+.arch-t h3{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
+.arch-t dl{display:grid;grid-template-columns:62px 1fr;gap:8px 12px;margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
+.arch-t dt{font-weight:800;white-space:nowrap}.arch-t dd{margin:0}
+.arch-t dd.pr{font-weight:700}
 @media (min-width:720px){.arch{padding:28px 30px 24px}.arch h2{font-size:26px}.arch ol{grid-template-columns:1fr 1fr}}
 
 .crumbs{width:100%;max-width:760px;margin:0 auto 14px}
@@ -229,6 +234,15 @@ function closeIt(){document.getElementById(&#x27;card&#x27;).style.display=&#x27
 <li><b>One journey</b>Email, SMS and retargeting fed from the same&nbsp;segments.</li>
 <li><b>Attribution you can defend</b>Revenue measured against a locked baseline, with a holdout test. Every order email touched, not just last&nbsp;click.</li>
 </ol>
+<div class="arch-t">
+<h3>The offer</h3>
+<dl>
+<dt>Day 1</dt><dd>Your sending domain authenticated and inbox placement&nbsp;checked.</dd>
+<dt>Day 7</dt><dd>This popup and the welcome flow live on your&nbsp;store.</dd>
+<dt>Day 21</dt><dd>All six flows&nbsp;live.</dd>
+<dt>Day 90</dt><dd class="pr">Email and SMS revenue up 25% on your locked baseline, or we keep working for free until it is. The&nbsp;Day&#8209;90&nbsp;Promise.</dd>
+</dl>
+</div>
 </section>
 <div class="notes">
 <p><b>This is a mockup</b>, built from what is public on your site. Working together it gets your real offer and code, and an A/B test from day one. The numbered pins on the email are notes for you, not part of it.</p>
