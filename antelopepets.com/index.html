@@ -57,16 +57,31 @@ body.locked{overflow:hidden}
 .arch-k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
 .arch h2{font-size:22px;line-height:1.25;margin:8px 0 6px;color:var(--ink)}
 .arch-s{font-size:14px;line-height:1.55;color:var(--mute);margin:0 0 14px}
-.arch ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px 22px;counter-reset:a}
-.arch li{counter-increment:a;position:relative;padding-left:30px;font-size:14px;line-height:1.5;color:var(--ink)}
-.arch li:before{content:counter(a);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--p);color:var(--tp);font-size:11px;font-weight:700;line-height:21px;text-align:center}
-.arch li b{display:block}
 .arch-t{margin:18px 0 0;padding:16px 0 0;border-top:1px solid #e3e3e0}
 .arch-t h3{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
-.arch-t dl{display:grid;grid-template-columns:62px 1fr;gap:8px 12px;margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
-.arch-t dt{font-weight:800;white-space:nowrap}.arch-t dd{margin:0}
-.arch-t dd.pr{font-weight:700}
-@media (min-width:720px){.arch{padding:28px 30px 24px}.arch h2{font-size:26px}.arch ol{grid-template-columns:1fr 1fr}}
+.arch-we{font-size:13px;font-weight:700;color:var(--ink);margin:0 0 10px}
+.arch-l{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:12px 22px}
+.arch-l li{position:relative;padding-left:30px;font-size:14px;line-height:1.5;color:var(--ink)}
+.arch-l li:before{content:"";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:#1f9d55 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.arch-l li b{display:block}
+.tl{list-style:none;padding:0;margin:0;position:relative}
+.tl li{position:relative;padding:0 0 16px 26px;font-size:14px;line-height:1.5;color:var(--ink)}
+.tl li:before{content:"";position:absolute;left:4px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.tl li:after{content:"";position:absolute;left:9px;top:19px;bottom:-3px;width:2px;background:#d9d9d6}
+.tl li:last-child:after{display:none}
+.tl-d{display:flex;align-items:center;gap:6px;font-weight:800;white-space:nowrap}
+.tl-x{display:block}
+.tl-f:before{background:#1f9d55!important;box-shadow:0 0 0 4px rgba(31,157,85,.18)}
+.tl-f .tl-d{color:#1f9d55}.flag{width:17px;height:17px;color:#1f9d55}
+.tl-a{color:var(--mute)!important}.tl-a:before{background:#fff!important;border:2px dashed #b9b9b5;width:8px!important;height:8px!important}
+@media (min-width:720px){.arch{padding:28px 30px 24px}.arch h2{font-size:26px}.arch-l{grid-template-columns:1fr 1fr 1fr}
+.tl{display:grid;grid-template-columns:1fr 1.25fr 1.4fr .9fr;gap:0 18px}
+.tl li{padding:26px 0 0}.tl li:before{left:0;top:0}.tl li:after{left:16px;right:-18px;top:5px;bottom:auto;width:auto;height:2px}
+.tl li.tl-a:after{display:none}}
+@media (max-width:480px){.hero{padding-top:18px}.logo{margin-bottom:12px}h1{font-size:27px;margin-bottom:8px}.pill{padding:12px 22px;font-size:15px}.small{margin-top:5px}
+.hero .crumbs{margin-bottom:8px}.hero .crumbs-t{font-size:12px;margin-bottom:8px}.hero .crumbs-l{font-size:11px;margin-top:7px;line-height:1.4}
+.impact{margin:12px auto 4px;padding:13px 16px 11px}.imp-l{margin:8px 0 2px}.imp-n{margin:4px 0 0}.imp-n span{font-size:32px}.imp-y{margin:2px 0 0;font-size:14px}.imp-f{font-size:10px;margin:7px 0 0;line-height:1.4}
+.tapline{margin:10px 0 6px}.labels{margin-top:6px}}
 
 .crumbs{width:100%;max-width:760px;margin:0 auto 14px}
 .crumbs-t{font-size:13px;text-align:center;margin:0 0 10px;line-height:1.4}
@@ -222,26 +237,26 @@ function closeIt(){document.getElementById(&#x27;card&#x27;).style.display=&#x27
 </div>
 <p class="more">The welcome flow has five emails; this is the first. Popup and welcome flow live by day 7. Abandoned checkout, abandoned cart, browse abandoned, post-purchase and winback follow, all six flows live by day 21.</p>
 <section class="arch" aria-label="How we build it">
-<p class="arch-k">Acquisition Labs</p>
-<h2>Email revenue architects for e-commerce brands doing $50K to $1M a&nbsp;month.</h2>
-<p class="arch-s">The popup and the email above are the part you can see. This is the engine behind them, built for brands that sell on subscription and repeat&nbsp;purchase.</p>
-<ol>
-<li><b>Inbox first</b>SPF, DKIM, DMARC and BIMI set up on your sending domain, warmed up before&nbsp;volume.</li>
-<li><b>Placement monitored</b>Inbox placement checked before the first send and every month&nbsp;after.</li>
+<p class="arch-k">Acquisition Labs &middot; <span style="white-space:nowrap">Email revenue architects</span></p>
+<h2>Ads cost more every year. The customers you already paid for should be&nbsp;yours.</h2>
+<p class="arch-s">Most email agencies sell pretty templates and copy. None of it matters when the email lands in spam. We start with deliverability and compliance, then build the segments and flows that turn your list into revenue. For e&#8209;commerce brands doing $50K to $1M a month that sell on subscription and repeat&nbsp;purchase.</p>
+<p class="arch-we">We do all of this for you:</p>
+<ul class="arch-l">
+<li><b>Inbox first</b>SPF, DKIM, DMARC and BIMI set up on your sending domain, warmed up, and placement checked every&nbsp;month.</li>
 <li><b>Your own audience</b>This popup collects email and phone on the first&nbsp;visit.</li>
-<li><b>Lifecycle automation</b>Flows timed to what customers buy and when they run out, from welcome to&nbsp;winback.</li>
+<li><b>Behavior-based flows</b>Timed to what customers buy and when they run out, from welcome to winback. Personalized, in your voice, never&nbsp;robotic.</li>
 <li><b>Deep segmentation</b>By purchase cycle, product, subscription and engagement. Inactive subscribers suppressed to protect your&nbsp;domain.</li>
 <li><b>One journey</b>Email, SMS and retargeting fed from the same&nbsp;segments.</li>
 <li><b>Attribution you can defend</b>Revenue measured against a locked baseline, with a holdout test. Every order email touched, not just last&nbsp;click.</li>
-</ol>
+</ul>
 <div class="arch-t">
 <h3>The offer</h3>
-<dl>
-<dt>Day 1</dt><dd>Your sending domain authenticated and inbox placement&nbsp;checked.</dd>
-<dt>Day 7</dt><dd>This popup and the welcome flow live on your&nbsp;store.</dd>
-<dt>Day 21</dt><dd>All six flows&nbsp;live.</dd>
-<dt>Day 90</dt><dd class="pr">Email and SMS revenue up 25% on your locked baseline, or we keep working for free until it is. The&nbsp;Day&#8209;90&nbsp;Promise.</dd>
-</dl>
+<ol class="tl">
+<li><span class="tl-d">Day 1</span><span class="tl-x">Your sending domain authenticated and inbox placement&nbsp;checked.</span></li>
+<li><span class="tl-d">Day 7 to 21</span><span class="tl-x">This popup and the welcome flow live by day 7. All six flows live by day&nbsp;21.</span></li>
+<li class="tl-f"><span class="tl-d">Day 90 <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 4h12l-3 4.5L18 13H6z" fill="currentColor"/></svg></span><span class="tl-x"><b>Email and SMS revenue up 25% on your locked baseline, or we keep working for free until it is.</b> The&nbsp;Day&#8209;90&nbsp;Promise.</span></li>
+<li class="tl-a"><span class="tl-d">After</span><span class="tl-x">Campaigns, tests and new flows as you&nbsp;grow.</span></li>
+</ol>
 </div>
 </section>
 <div class="notes">
