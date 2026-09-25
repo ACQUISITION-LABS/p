@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Vineyard Wine Cellars popup, rebuilt</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=10:wght@400;600;700&display=swap"><style>
+:root{--p:#032f40;--tp:#ffffff;--deep:#003050;--ink:#001f34;--cream:#f3f5f7;--sand:#e5eaed;--accent:#003050;--rule:#9eb0bc;--fh:'10', Helvetica, Arial, sans-serif;--font:"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#2a2826;font-family:var(--font);color:var(--ink)}
+.stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px 40px;background:radial-gradient(900px 500px at 50% 0%,#4a4541,#221f1d)}
+.cap{color:#ddd;font-size:14px;margin:0 0 14px;text-align:center}.cap b{color:#fff}
+.card{display:grid;grid-template-columns:1fr;width:100%;max-width:780px;background:var(--cream);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;border-radius:4px}
+.photo{position:relative;min-height:236px;background:var(--deep) center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,48,80,0.12) 0%,rgba(0,48,80,0.62) 38%,rgba(0,48,80,0.94) 72%,rgba(0,48,80,0.94) 100%)}
+.tag{position:relative;z-index:1;margin:0;padding:0 22px 34px;color:#fff;font-family:var(--fh);font-weight:700;font-size:23px;line-height:1.12;text-wrap:balance}
+.tag small{display:block;font:500 11px/1.4 var(--font);letter-spacing:2px;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.seam{position:absolute;left:0;right:0;bottom:-1px;z-index:2;line-height:0}.seam svg{display:block;width:100%;height:26px}
+.form{padding:22px 24px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--cream)}
+.logo{max-height:38px;max-width:170px;object-fit:contain;margin:0 0 14px}.wordmark{font-family:var(--fh);font-weight:700;font-size:20px;margin:0 0 14px;color:var(--ink)}
+.chip{display:inline-block;background:var(--deep);padding:8px 12px;margin:0 0 14px}.chip .logo{margin:0}
+.eyebrow{margin:0 0 8px;font:500 11px/1.4 var(--font);letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.big{font-family:var(--fh);font-size:50px;line-height:1;font-weight:800;color:var(--ink);margin:0 0 4px;text-transform:uppercase}
+.smallo{font-size:15px;color:var(--ink);opacity:.75;margin:0 0 16px}
+.q{font-size:14px;line-height:1.45;color:var(--ink);opacity:.78;margin:0 0 14px;max-width:32ch}
+.opt,.btn{display:block;width:100%;min-height:48px;font-family:var(--font);font-size:15px;cursor:pointer;margin:0 0 10px}
+.opt{background:#fff;color:var(--ink);border:1.5px solid rgba(0,31,52,0.28);font-weight:600;border-radius:999px;transition:background .15s}.opt:hover{background:var(--sand)}
+.btn{background:var(--p);color:var(--tp);border:0;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:14px}
+input{display:block;width:100%;min-height:48px;border:1px solid var(--rule);background:#fff;padding:0 14px;font-size:16px;margin:0 0 10px;font-family:var(--font);color:var(--ink)}
+.skip{background:none;border:0;color:var(--ink);opacity:.6;font-size:13px;cursor:pointer;font-family:var(--font);margin-top:2px;text-decoration:underline;min-height:40px}
+.fine{font-size:10px;color:var(--ink);opacity:.55;margin:8px 0 0;line-height:1.4}
+.steps{display:flex;gap:6px;width:100%;margin:0 0 16px}.steps i{height:2px;flex:1;background:var(--rule)}.steps i.on{background:var(--p)}
+.step{display:none;width:100%}.step.on{display:flex;flex-direction:column;align-items:center}
+h2{font-family:var(--fh);font-size:27px;line-height:1.12;margin:0 0 8px;color:var(--ink);text-wrap:balance}
+.note{margin-top:20px;color:#cfcfcf;font-size:13px;line-height:1.5;text-align:center;max-width:60ch}.note a{color:#fff}
+.replay{margin-top:12px;font-size:13px;background:none;border:1px solid #777;color:#ddd;border-radius:6px;padding:8px 12px;cursor:pointer;font-family:inherit}
+.tap{display:inline-block;background:#fff;color:#111;font-weight:700;padding:6px 12px;border-radius:999px;margin-left:6px;animation:nudge 1.6s ease-in-out infinite}
+.cta{display:inline-block;background:var(--p);color:var(--tp);font-weight:700;font-size:15px;padding:13px 22px;border-radius:999px;text-decoration:none;margin:4px 0 6px}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.tap{animation:none}}
+
+.crumbs{width:100%;max-width:760px;margin:0 auto 14px}
+.crumbs-t{font-size:13px;text-align:center;margin:0 0 10px;line-height:1.4}
+.crumbs-row{display:flex;justify-content:space-between;align-items:flex-start;gap:4px;position:relative}
+.crumbs-row:before{content:"";position:absolute;left:8%;right:8%;top:13px;height:2px;background:rgba(255,255,255,.25);z-index:0}
+.cr{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:1;min-width:0}
+.dot{width:28px;height:28px;border-radius:50%;border:2px solid;display:flex;align-items:center;justify-content:center;font:700 13px/1 Helvetica,Arial,sans-serif;background:#fff}
+.lab{font-size:10px;text-align:center;line-height:1.2;max-width:70px}
+.ems{display:inline-flex;gap:2px;justify-content:center}.ems i{width:5px;height:5px;border-radius:50%;display:inline-block}
+.crumbs-l{font-size:12px;line-height:1.5;text-align:center;margin:12px auto 0;max-width:60ch}.crumbs-l .ems{vertical-align:middle}.crumbs-l .ems i{width:7px;height:7px}
+@media(max-width:480px){.lab{font-size:9px;max-width:56px}.dot{width:24px;height:24px;font-size:12px}}
+
+@media(min-width:641px){.card{grid-template-columns:1fr 1fr;min-height:480px}.photo{min-height:0}.tag{font-size:30px;padding:0 30px 36px}}
+.seam .v{display:none}
+@media(min-width:641px){.seam{left:auto;top:0;bottom:0;right:-1px;width:26px;height:auto}.seam svg{width:26px;height:100%}.seam .h{display:none}.seam .v{display:block}.form{padding:30px 34px 26px;justify-content:center}.big{font-size:58px}}
+</style></head><body>
+<div class="stage">
+<div class="crumbs"><div class="crumbs-t" style="color:rgba(255,255,255,.55)">The popup, then six flows. <b style="color:#fff">This is the popup. It feeds every flow below.</b></div><div class="crumbs-row"><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">1</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Welcome flow</span><span class="ems" title="5 emails" aria-label="5 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">2</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Abandoned checkout</span><span class="ems" title="4 emails" aria-label="4 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">3</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Abandoned cart</span><span class="ems" title="3 emails" aria-label="3 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">4</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Browse abandoned</span><span class="ems" title="4 emails" aria-label="4 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">5</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Post-purchase</span><span class="ems" title="4 emails" aria-label="4 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div><div class="cr"><span class="dot" style="background:transparent;color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.25)">6</span><span class="lab" style="color:rgba(255,255,255,.55);font-weight:400">Winback</span><span class="ems" title="3 emails" aria-label="3 emails"><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i><i style="background:rgba(255,255,255,.6)"></i></span></div></div><div class="crumbs-l" style="color:rgba(255,255,255,.55)"><span class="ems"><i style="background:#032f40"></i></span> = one email. <b style="color:#fff">23 emails across the six flows</b>, plus SMS on the flows that earn it. More flows as you grow: sunset, replenishment, VIP, cross-sell and subscription.</div></div>
+<p class="cap">Your signup popup, rebuilt in your brand. <span class="tap">Tap an answer to try it</span></p>
+<div class="card" id="card">
+  <div class="photo" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAAUABQDASIAAhEBAxEB/8QAGgABAQACAwAAAAAAAAAAAAAAAAQBAgMFBv/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAAH/2gAMAwEAAhADEAAAAebp6pNzZlQx+oJucM//xAAbEAADAAMBAQAAAAAAAAAAAAABAgMEBRITAP/aAAgBAQABBQKdoM+w7D4EBWE5quRsYP64PsIRc9liVB+//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ARX/xAAgEAACAQQBBQAAAAAAAAAAAAABEQACAxIiQRATMWFx/9oACAEBAAY/Ajb2yHqKgqhTI1cyq53QcjHsQvM0AT5M+R9P/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARITFBof/aAAgBAQABPyF4I7F42/UJaYN/LigbQUbCOtBxkZzUeEeOUuQYnYs//9oADAMBAAIAAwAAABD3L7//xAAZEQEAAgMAAAAAAAAAAAAAAAABABARITH/2gAIAQMBAT8QMsXdPZ//xAAXEQEBAQEAAAAAAAAAAAAAAAABADEh/9oACAECAQE/EEDIcJjL/8QAHRABAQACAwADAAAAAAAAAAAAAREAITFBcVFhwf/aAAgBAQABPxClR+un3k50F4Gpu9zAq0M/a5CpYYhhs4Pd4TgebUhxQzb9TQ7449LBkafcuSRt+chfc//Z)">
+    <p class="tag"><small>&#10038;&nbsp;&nbsp;VINEYARD WINE CELLARS&nbsp;&nbsp;&#10038;</small>Bespoke Wine Storage Solutions</p>
+    <div class="seam"><svg class="h" viewBox="0 0 600 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0,12 C110,28 190,0 310,11 C430,22 510,2 600,12 L600,26 L0,26 Z" fill="#f3f5f7"/></svg><svg class="v" viewBox="0 0 26 600" preserveAspectRatio="none" aria-hidden="true"><path d="M12,0 C28,110 0,190 11,310 C22,430 2,510 12,600 L26,600 L26,0 Z" fill="#f3f5f7"/></svg></div>
+  </div>
+  <div class="form">
+    <img src="data:image/png;base64,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" alt="Vineyard Wine Cellars" class="logo">
+    <div class="steps"><i class="on" id="d1"></i><i id="d2"></i><i id="d3"></i></div>
+    <div class="step on" id="s1">
+      <p class="eyebrow">&#10038; Quick question &#10038;</p>
+      <h2>When do you usually enjoy it?</h2>
+      <p class="q">One tap, and we will point you to the right&nbsp;pick.</p>
+      <button type="button" class="opt" data-next="2">Weeknights</button><button type="button" class="opt" data-next="2">Weekends</button><button type="button" class="opt" data-next="2">Gifting</button>
+      <button class="skip" onclick="closeIt()">No thanks</button>
+    </div>
+    <div class="step" id="s2">
+      <p class="eyebrow">&#10038; Your picks &#10038;</p>
+      <h2>Where should we send your picks?</h2>
+      <p class="q">Plus a heads-up before you run out.</p>
+      <input type="email" placeholder="Email address" inputmode="email">
+      <button class="btn" data-next="3">Send my picks</button>
+      <button class="skip" onclick="closeIt()">No thanks</button>
+      <p class="fine">By signing up you agree to receive marketing emails from Vineyard Wine Cellars. Unsubscribe any time.</p>
+    </div>
+    <div class="step" id="s3">
+      <p class="eyebrow">&#10038; One more step &#10038;</p>
+      <h2>Want a text when it is time to reorder?</h2>
+      <input type="tel" placeholder="Phone number" inputmode="tel">
+      <button class="btn" data-next="4">Text me</button>
+      <button class="skip" data-next="4">No thanks, email is fine</button>
+      <p class="fine">Msg &amp; data rates may apply. Reply STOP to opt out.</p>
+    </div>
+    <div class="step" id="s4">
+      <p class="eyebrow">&#10038; You're in &#10038;</p>
+      <h2>Welcome in</h2>
+      <p class="q">Your picks are in your inbox.</p>
+      <button class="btn" onclick="closeIt()">Keep shopping</button>
+    </div>
+  </div>
+</div>
+<p class="note"><b style="color:#fff">Timing: it fires 6 seconds after your page loads on mobile, on exit intent on desktop.</b> One-tap quiz first, their picks by email on step two, text on its own step after. No discount: the reason to sign up is the answer to their question and a reminder before they run out, so customers never learn to wait for a code. Every answer tags the subscriber, so your emails can follow what they told you.</p>
+<p class="note"><b style="color:#fff">This is a mockup</b>, built from what is public on your site. Working together it gets your real products and quiz, and an A/B test from day one.</p>
+<p class="note"><a class="cta" href="https://calendly.com/juanfe-acquisitionlabs/30min">Get it live on your store in 7 days</a><br><span style="font-size:12px">30 minutes on a call, then we build it in your account.</span></p>
+<button class="replay" onclick="go(1);document.getElementById('card').style.display='grid'">Replay</button>
+<p class="note" style="font-size:11px;color:#888">Built by Acquisition Labs for Vineyard Wine Cellars. Not affiliated with Vineyard Wine Cellars.</p>
+</div>
+<script>
+function go(n){for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.toggle('on',i===n);var d=document.getElementById('d'+i);if(d)d.classList.toggle('on',i<=n)}}
+document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){go(parseInt(b.getAttribute('data-next')))})});
+function closeIt(){document.getElementById('card').style.display='none'}
+</script>
+</body></html>
